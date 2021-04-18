@@ -7,33 +7,6 @@ import java.util.Arrays;
 @Service
 public class QuickSortService<T extends Comparable> {
 
-/*    private int partition(T[] array, int startIndex, int endIndex) {
-        int pivotIndex = (startIndex + endIndex) / 2;
-        T pivotValue = array[pivotIndex];
-        startIndex--;
-        endIndex++;
-
-        while (true) {
-            do startIndex++; while (array[startIndex].compareTo(pivotValue) < 0);
-            do endIndex--; while (array[endIndex].compareTo(pivotValue) > 0);
-
-            if (startIndex >= endIndex) return endIndex;
-            T temp = array[startIndex];
-            array[startIndex] = array[endIndex];
-            array[endIndex] = temp;
-        }
-    }
-
-
-    public T[] quicksort(T[] array, int startIndex, int endIndex) {
-        if (startIndex < endIndex)
-        {
-            int pivotIndex = partition(array, startIndex, endIndex);
-            quicksort(array, startIndex, pivotIndex);
-            quicksort(array, pivotIndex + 1, endIndex);
-        }
-        return array;
-    }*/
 public int[] sort(int[] array) {
     return Arrays.stream(sort(Arrays.stream(array).boxed().toArray(Integer[]::new)))
             .mapToInt(Integer::intValue)
